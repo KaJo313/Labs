@@ -1,0 +1,44 @@
+/* Nanum Brush Script (body): */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+/* Seaweed Script (header): */
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
+
+body {
+	height: 200px;
+	width: 800px;
+  padding: 50px;
+  font-family: "Nanum Brush Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #ccc;
+}
+  
+    
+  header {
+    height: 10vh;
+    font-family: "Seaweed Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.main-article {
+    color: black;
+    background-color: white;
+    
+    .float-left {
+      float: left; /* Floats the image to the left */
+      margin-right: 10px; /* Adds space between the image and the text */
+      width: 150px; /* Sets the image width */
+  }
+ 
+  .float-right {
+    float: right; /* Floats the image to the right */
+    margin-left: 10px; /* Adds space between the image and the text */
+    width: 150px;
+}
+
+
+
+}
+  
