@@ -23,13 +23,14 @@ while (l >= 1) {
 let m = 1
 do {
     console.log(m)
-    let n = 10
-    do {
-        console.log(n)
-        n--
-    } while (n >= 1)
     m++
 } while (m <= 10)
+
+let n = 10
+do {
+    console.log(n)
+    n--
+} while (n >= 1)
 
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
