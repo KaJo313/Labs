@@ -10,12 +10,13 @@ for (let j = 10; j >= 1; j--) {
 let k = 1
 while (k <= 10) {
     console.log(k)
-    let l = 10
-    while (l >= 1) {
-        console.log(l)
-        l--
-    }
     k++
+}
+
+let l = 10
+while (l >= 1) {
+    console.log(l)
+    l--
 }
 
 
