@@ -1,0 +1,53 @@
+header {
+	height: 20vh;
+	background-color: #d3d3d3;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 1em;
+}
+
+#menu-symbol {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e0e0e0;
+	border-radius: 5px;
+}
+
+#menu {
+	position: absolute;
+	top: calc(20vh +10px);
+	right: 10px;
+	width: 150px;
+	background: white;
+	border: 1px solid gray;
+	text-align: left;
+	padding: 10px 0;
+	z-index: 100;
+}
+
+#menu a {
+	display: block;
+	margin: 10px 0;
+	text-decoration: underline;
+	font-size: 2 em;
+	padding-left: 15px;
+	color: blue;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+#letters,
+#numbers {
+	font-size: 2.5em;
+	text-align: center;
+}
