@@ -1,0 +1,15 @@
+{
+  "name": "vending-machines",
+  "version": "1.0.0",
+  "main": "cart-functions.js",
+  "scripts": {
+    "test": "jest --verbose --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
