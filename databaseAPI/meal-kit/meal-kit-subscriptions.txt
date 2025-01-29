@@ -1,0 +1,97 @@
+SELECT * FROM customers;
+
+SELECT * FROM customers
+	WHERE subscription_level = 'Premium';
+    
+SELECT DISTINCT state
+	FROM customers
+	ORDER BY state ASC;
+    
+SELECT COUNT(*) from customers
+	WHERE state = 'NY';
+    
+SELECT full_name, email FROM customers
+	WHERE subscription_end_date IS NULL;
+    
+CREATE INDEX idx_state
+	ON customers (state);
+
+INSERT INTO customers (full_name, email, subscription_level, subscription_start_date, subscription_end_date, state) VALUES ('Grant Chirpus', 	'grant.chirpus@grandcircus.com', 'Premium', '2024-07-01', '2025-12-31', 'MI');
+
+UPDATE customers SET subscription_level = 'Premium'
+	WHERE full_name = 'Emma Collins';
+
+SELECT COUNT(*) from customers
+	WHERE email LIKE '%edu';
+
+DELETE FROM customers
+	WHERE subscription_end_date <= '2024-08-01';
+
+SELECT full_name, email from customers
+	WHERE subscription_level = 'Premium' 
+    	ORDER BY full_name ASC;
+
+INSERT INTO meals (meal_name, calories, price, is_vegetarian, subscription_level) VALUES 
+  ('Truffle Risotto', 700, 25.00, FALSE, 'Premium'),
+  ('Lobster Mac & Cheese', 900, 28.00, FALSE, 'Premium'),
+  ('Vegetable Quiche', 500, 11.00, TRUE, 'Standard'),
+  ('Roasted Duck Breast', 700, 22.50, FALSE, 'Premium'),
+  ('Mushroom Stroganoff', 500, 12.00, TRUE, 'Standard'),
+  ('Filet Mignon', 700, 30.00, FALSE, 'Premium'),
+  ('Greek Salad', 500, 9.00, TRUE, 'Standard'),
+  ('Wild Mushroom Soup', 500, 14.00, TRUE, 'Premium'),
+  ('Chicken Parmesan', 700, 13.50, FALSE, 'Standard'),
+  ('Seafood Paella', 900, 26.00, FALSE, 'Premium');
+
+SELECT meal_name FROM meals
+	WHERE is_vegetarian IS TRUE
+    LIMIT 5;
+
+SELECT * FROM meals
+	ORDER BY calories DESC, price ASC;
+
+UPDATE meals SET price = price + 5
+	WHERE subscription_level = 'Premium';
+
+SELECT AVG(price), MAX(price), MIN(price)
+	FROM meals;
+
+SELECT * FROM meals
+	WHERE price BETWEEN 10.00 AND 20.00;
+
+ALTER TABLE meals
+ADD star_rating INT
+	DEFAULT NULL;
+
+DROP TABLE IF EXISTS oops;
+
+SELECT subscription_level AS " ", COUNT(*) AS subscription_count
+	FROM meals
+    GROUP BY subscription_level;
+
+SELECT subscription_level AS " ", AVG(price) AS subscription_average_price
+	FROM meals
+    GROUP BY subscription_level;
+
+SELECT is_vegetarian AS " ", AVG(calories) AS "is_vegetarian Average Calories"
+	FROM meals
+    GROUP BY is_vegetarian;
+
+SELECT subscription_level, MIN(price) AS subscription_average_price
+	FROM meals
+    GROUP BY subscription_level;
+
+SELECT state, COUNT(customers) AS "customer count"
+	FROM customers
+    GROUP BY state
+    ORDER BY state;
+
+SELECT state, "customer count"
+	FROM (
+		SELECT state, COUNT(*) AS "customer count"
+		FROM customers
+  		GROUP BY state
+  		ORDER BY COUNT(*) ASC 
+  		LIMIT 5
+	) 
+	ORDER BY "customer count" DESC;
